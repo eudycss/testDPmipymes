@@ -16,6 +16,7 @@
 	<h:form>
 		<p:menubar>
 			<p:menuitem value="Regresar" icon="pi pi-home" action="/menu" />
+
 			<f:facet name="options">
 				<p:menuButton value="#{beanSegLogin.loginDTO.correo}"
 					icon="pi pi-user">
@@ -25,33 +26,46 @@
 				</p:menuButton>
 			</f:facet>
 		</p:menubar>
-		<p:staticMessage severity="info" summary="Proyectos"></p:staticMessage>
+		<p:staticMessage severity="info" summary="Vendedor"></p:staticMessage>
 	</h:form>
 	<div>
+		<h:form>
+			<p:panelGrid columns="2">
+				<h:outputText value="Cliente" />
+				<p:inputText
+				required="true" requiredMessage="Debe poner un nombre"/>
+				<h:outputText value="Fecha de entrega" />
+				<p:calendar  />
+				<h:outputText value="Fecha de emisión" />
+				<p:calendar/>
+				<p:commandButton value="Guardar" icon="pi pi-save" update="@form,:formTabla" />
+			</p:panelGrid>
+		</h:form>
 		<h:form id="formTabla">
-			<p:dataTable value="#{beanPryGerente.listaProyectos}" var="p">
-				<p:column headerText="ID" style="width:30px">
-					<h:outputText value="#{p.idPryProyecto}" />
+			<p:dataTable >
+				<p:column headerText="ID">
+				<h:outputText  />
 				</p:column>
-				<p:column headerText="NOMBRE">
-					<h:outputText value="#{p.nombre}" />
+				<p:column headerText="Nombre">
+				<h:outputText  />
 				</p:column>
-				<p:column headerText="FECHA INICIO">
-					<h:outputText value="#{p.fechaInicio}" />
+				<p:column headerText="Fecha de inicio">
+				<h:outputText  />
 				</p:column>
-				<p:column headerText="FECHA FIN">
-					<h:outputText value="#{p.fechaFin}" />
+				<p:column headerText="Fecha fin">
+				<h:outputText  />
 				</p:column>
-				<p:column headerText="ESTADO" style="width:150px">
-						<p:inputText value="#{p.estado}" style="width:80px" />
+				<p:column headerText="Estado">
+				<h:outputText  />
 				</p:column>
-				<p:column headerText="AVANCE" style="width:100px">
-					<h:outputText value="#{p.avance}" />
+				<p:column headerText="Avance">
+				<h:outputText  />
 				</p:column>
-				<p:column headerText="OPCIONES">
-					<p:commandButton value="Guardar" icon="pi pi-save"
-						update="@form,:formTabla"
-						action="#{beanPryGerente.actionListenerActualizarEstado(p)}" />
+				<p:column headerText="Opciones">
+				<p:commandButton title="Edit" icon="pi pi-pencil"/>
+				<p:commandButton title="Delete" icon="pi pi-times"/>
+				<p:commandButton value="Tareas" icon="pi pi-search"/>
+				
 				</p:column>
 			</p:dataTable>
 		</h:form>
