@@ -35,11 +35,16 @@
           </p:menuButton>
         </f:facet>
       </p:menubar>
+      
       <p:staticMessage
         severity="info"
         summary="Módulo de proyectos"
       ></p:staticMessage>
     </h:form>
+    
+    
+  
+	
     <div>
       <h:form>
         <p:panelGrid columns="2">
@@ -54,21 +59,34 @@
           <h:outputText value="Fecha de Fin" />
           <p:calendar value="#{beanPryLider.nuevoProyecto.fechaFin}" />
 
-          <h:outputText value="Test EVásquez sebas " />
-          <h:outputText value="Test Heinz" />
-          <p:inputText value="04zAM" />
-          <h:outputText value="Test HDelgado" />
-          <p:inputText value="12345" />
-          <h:outputText value="Sebas" />
-          <p:inputText value="sebasins" />
           <p:commandButton
             value="Guardar"
             icon="pi pi-save"
             update="@form,:formTabla"
             actionListener="#{beanPryLider.actionListenerInsertarProyecto()}"
           />
-        </p:panelGrid>
+    </p:panelGrid>
+    
       </h:form>
+      
+      <div>
+      <h5>Rounded and Outlined Icon Buttons</h5>
+    <p:button icon="pi pi-check" styleClass="rounded-button ui-button-outlined" />
+    <p:button icon="pi pi-bookmark" styleClass="rounded-button ui-button-secondary ui-button-outlined" />
+    <p:button icon="pi pi-search" styleClass="rounded-button ui-button-success ui-button-outlined" />
+    <p:button icon="pi pi-user" styleClass="rounded-button ui-button-info ui-button-outlined" />
+    <p:button icon="pi pi-bell" styleClass="rounded-button ui-button-warning ui-button-outlined" />
+    <p:button icon="pi pi-heart" styleClass="rounded-button ui-button-help ui-button-outlined" />
+    <p:button icon="pi pi-times" styleClass="rounded-button ui-button-danger ui-button-outlined" />
+</div>
+
+ <div class="p-field p-col-12 p-md-4">
+                <h5>Max-Min and Step</h5>
+                <div class="knob-container  ui-corner-all">
+                    <p:knob max="1000" step="50" value="950"/>
+                </div>
+            </div>
+      
       <h:form id="formTabla">
         <p:dataTable value="#{beanPryLider.listaProyectos}" var="p">
           <p:column headerText="ID">
